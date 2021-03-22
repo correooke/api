@@ -1,0 +1,79 @@
+version: '3'
+services:
+    redisInfo:
+        image: redis:latest
+        ports:
+            - 6379:6379
+        volumes:
+            - ./config/redis.conf:/redis.conf
+        command: [ "redis-server", "/redis.conf" ]
+    redisStats:
+        image: redis:latest
+        ports:
+            - 6380:6379
+        volumes:
+            - ./config/redis.conf:/redis.conf
+        command: [ "redis-server", "/redis.conf" ]   
+    apiInfo:
+        container_name: api-info-service-container
+        image: api-info-service-image
+        build: 
+            context: .
+            dockerfile: './Dockerfile.IpInfoService'
+        restart: unless-stopped
+        ports: 
+        - "3001:80"
+        volumes: 
+        - api-info-files:/api-info-files
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - REDIS_INFO_SERVER=redisInfo:6379
+            - REDIS_STATS_SERVER=redisStats:6379
+            - ACCESS_KEY="?access_key=a16086f9c469390399a857f9b76991f5&format=1"
+            - URL_IP2_COUNTRY="https://api.ip2country.info/ip?{0}"
+            - URL_COUNTRY_INFO="https://restcountries.eu/rest/v2/alpha/{0}"
+            - URL_COUNTRY_INFO_ALL="https://restcountries.eu/rest/v2/all"
+            - URL_CURRENCY_INFO="http://data.fixer.io/api/latest"
+    apiStats1:
+        container_name: api-stats-service-container-1
+        image: api-stats-service-image
+        build:             
+            context: .
+            dockerfile: './Dockerfile.IpStatsService'
+        restart: unless-stopped
+        ports:
+        - "3002:80"   
+        volumes: 
+        - api-stats-files:/api-stats-files
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - REDIS_INFO_SERVER=redisInfo:6379
+            - REDIS_STATS_SERVER=redisStats:6379
+            - SERVER_NAME=API1
+            - URL_COUNTRY_INFO_ALL="https://restcountries.eu/rest/v2/all"
+    apiStats2:
+        container_name: api-stats-service-container-2
+        image: api-stats-service-image
+        build:             
+            context: .
+            dockerfile: './Dockerfile.IpStatsService'
+        restart: unless-stopped
+        ports:
+        - "3003:80"   
+        volumes: 
+        - api-stats-files:/api-stats-files
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - REDIS_INFO_SERVER=redisInfo:6379
+            - REDIS_STATS_SERVER=redisStats:6379
+            - SERVER_NAME=API2
+            - URL_COUNTRY_INFO_ALL="https://restcountries.eu/rest/v2/all"
+    balancer:
+        container_name: api-balancer-container
+        image: api-balancer-image
+        build: ./balancer/
+        ports:
+        - "9000:80"   
+volumes:
+    api-stats-files:
+    api-info-files:

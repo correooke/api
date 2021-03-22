@@ -1,0 +1,20 @@
+{
+  "name": "ipdata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.7.1",
+    "axios": "^0.21.1",
+    "haversine": "^1.1.1",
+    "ioredis": "^4.23.0",
+    "ip2countrify": "^0.2.0",
+    "moment": "^2.29.1",
+    "redis": "^3.0.2"
+  }
+}

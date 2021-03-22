@@ -1,0 +1,20 @@
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+WORKDIR /src
+COPY ["net-api-stats/IpStatsService/IpStatsService.csproj", "net-api-stats/IpStatsService/"]
+RUN dotnet restore "net-api-stats/IpStatsService/IpStatsService.csproj"
+COPY . .
+WORKDIR "/src/net-api-stats/IpStatsService"
+RUN dotnet build "IpStatsService.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "IpStatsService.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "IpStatsService.dll"]
