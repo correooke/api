@@ -29,7 +29,7 @@ services:
             - ASPNETCORE_ENVIRONMENT=Development
             - REDIS_INFO_SERVER=redisInfo:6379
             - REDIS_STATS_SERVER=redisStats:6379
-            - ACCESS_KEY="?access_key=a16086f9c469390399a857f9b76991f5&format=1"
+            - ACCESS_KEY=?access_key=a16086f9c469390399a857f9b76991f5&format=1
             - URL_IP2_COUNTRY=https://api.ip2country.info/ip?{0}
             - URL_COUNTRY_INFO=https://restcountries.eu/rest/v2/alpha/{0}
             - URL_COUNTRY_INFO_ALL=https://restcountries.eu/rest/v2/all
