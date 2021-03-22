@@ -20,7 +20,10 @@ Notas:
 docker-compose-prod contiene una versión sin swagger para productivo
 
 ## Arquitectura
-	
+
+- Se utiliza arquitectura DDD
+- Se separan las funcionalidades en dos microservicios para mayor escalabilidad
+- <https://drive.google.com/file/d/1ZTRMMRfEjOmh41nev_phJhDqrA5NZ48G/view?usp=sharing>
 
 ### Estructura de proyectos
 
