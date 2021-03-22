@@ -5,8 +5,9 @@ docker-compose up -d
 
 
 Acceso mediante swagger:
-http://localhost:3001/swagger/index.html
-http://localhost:9000/swagger/index.html
+
+API DE INFORMACIÓN SOBRE IP: http://localhost:3001/swagger/index.html
+API DE ESTADÍSTICAS DE IP:   http://localhost:9000/swagger/index.html
 
 
 Ejemplo de llamadas directas al api:
