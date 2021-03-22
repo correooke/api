@@ -17,7 +17,7 @@ namespace IpStatsService.Domain
 
         public double GetDistance(GeoCoordinate From) {  
             var to = new GeoCoordinate(Latitude, Longitude);
-            return Convert.ToInt32(From.GetDistanceTo(to));
+            return Convert.ToInt32(From.GetDistanceTo(to) / 1000);
 
         }
         public int Calls { get; set; }

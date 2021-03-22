@@ -70,7 +70,7 @@ namespace net_api.Controllers
                 CountryName = info.Name,
                 CountryCode = info.Alpha2Code,
                 Currencies = info.Currencies?.Select(selector),
-                Distance = Convert.ToInt32(from.GetDistanceTo(to)),
+                Distance = Convert.ToInt32(from.GetDistanceTo(to) / 1000),
                 Languages = info.Languages?.Select(l => l.Name),
                 Latitude = info.Coordinate.Latitude,
                 Longitude = info.Coordinate.Longitude,

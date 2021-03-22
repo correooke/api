@@ -41,7 +41,24 @@ namespace IpStatsService.Controllers.Tests
 
             var res = await controller.Get();
 
-            Assert.AreEqual(1, res.ByCountry.Count());
+            Assert.AreEqual(2, res.ByCountry.Count());
+        }
+
+        [TestMethod()]
+        public async Task GetMathResultTest()
+        {
+            var logger = new Mock<ILogger<IpStatsController>>();
+            var ipStats = new Mock<IIpReportService>();
+            var cache = new CacheForTest();
+
+            ipStats.Setup(i => i.GetIpCallsStats()).ReturnsAsync(GetIpCallsStats());
+            var controller = new IpStatsController(logger.Object, ipStats.Object, cache);
+
+            var res = await controller.Get();
+
+            Assert.AreEqual(10283, res.MaxDistance);
+            Assert.AreEqual(2824, res.MinDistance);
+            Assert.AreEqual(((10283 * 5)+(2824 * 10))/15, res.AverageDistance);
         }
 
         private IpCallsStats GetIpCallsStats()
@@ -52,11 +69,19 @@ namespace IpStatsService.Controllers.Tests
                 {
                     new CallsByCountry()
                     {
-                        Calls = 1,
-                        CountryCode = "AR",
-                        CountryName = "Argentina",
-                        Latitude = -34,
-                        Longitude = -36,
+                        Calls = 5,
+                        CountryCode = "ES",
+                        CountryName = "España",
+                        Latitude = 40,
+                        Longitude = -4,
+                    },
+                    new CallsByCountry()
+                    {
+                        Calls = 10,
+                        CountryCode = "BR",
+                        CountryName = "Brasil",
+                        Latitude = -10,
+                        Longitude = -55,
                     }
                 }
             };
