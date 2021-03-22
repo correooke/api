@@ -24,22 +24,22 @@ docker-compose-prod contiene una versión sin swagger para productivo
 
 ### Estructura de proyectos
 
-	**Proyecto base compartido**
+	** Proyecto base compartido **
 	- net-api-core > IpInfoCore > IpInfoCore.csproj
 
-	**Proyecto IpInfo** 
+	** Proyecto IpInfo ** 
 	- net-api > IpInfoService.csproj
 
-	**Test de IpInfo**
+	** Test de IpInfo **
 	- net-api-test > IpInfoServiceTest.csproj
 
-	**Proyecto IpStats**
+	** Proyecto IpStats **
 	- net-api-stats > IpStatsService > IpStatsService.csproj
 
-	**Test de IpStats**
+	** Test de IpStats **
 	- net-api-stats > IpStatsServiceTest > IpStatsServiceTest.csproj
 
-	**Proyecto draft en NodeJS**
+	** Proyecto draft en NodeJS **
 	- node-draft
 
 
