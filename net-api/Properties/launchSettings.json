@@ -21,7 +21,7 @@
         "URL_IP2_COUNTRY": "https://api.ip2country.info/ip?{0}",
         "URL_COUNTRY_INFO": "https://restcountries.eu/rest/v2/alpha/{0}",
         "URL_COUNTRY_INFO_ALL": "https://restcountries.eu/rest/v2/all",
-        "URL_CURRENCY_INFO": "https://data.fixer.io/api/latest"
+        "URL_CURRENCY_INFO": "http://data.fixer.io/api/latest"
       }
     },
     "net_api": {
@@ -38,7 +38,7 @@
         "URL_IP2_COUNTRY": "https://api.ip2country.info/ip?{0}",
         "URL_COUNTRY_INFO": "https://restcountries.eu/rest/v2/alpha/{0}",
         "URL_COUNTRY_INFO_ALL": "https://restcountries.eu/rest/v2/all",
-        "URL_CURRENCY_INFO": "https://data.fixer.io/api/latest"
+        "URL_CURRENCY_INFO": "http://data.fixer.io/api/latest"
       }
     }
   }

@@ -52,7 +52,8 @@ namespace net_api.Services
 
         private void Validate(DataRates.Root apiRates)
         {
-            throw new Exception(@"Error getting currency rates: " + apiRates.ToString());
+            if (apiRates.success == false)
+                throw new Exception(@"Error getting currency rates: " + apiRates.ToString());
         }
     }
 }
