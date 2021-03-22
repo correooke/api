@@ -31,7 +31,15 @@ namespace IpStatsService.Controllers.Models
         {
             get
             {
-                return ByCountry.Where(c => c.Calls > 0).Average(c => c.Distance * c.Calls);
+                return ByCountry.Where(c => c.Calls > 0).Sum(c => c.Distance * c.Calls) / TotalCalls;
+            }
+        }
+
+        public int TotalCalls
+        {
+            get
+            {
+                return ByCountry.Sum(c => c.Calls);
             }
         }
     }
