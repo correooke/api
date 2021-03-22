@@ -13,8 +13,10 @@ namespace net_api.Infraestructure.ExternalAPI
             countryInfoUrl = Environment.GetEnvironmentVariable("URL_COUNTRY_INFO"); // "https://restcountries.eu/rest/v2/alpha/{0}";
             countryInfoUrlAll = Environment.GetEnvironmentVariable("URL_COUNTRY_INFO_ALL"); // "https://restcountries.eu/rest/v2/all";
             currencyInfoUrl = Environment.GetEnvironmentVariable("URL_CURRENCY_INFO"); // "http://data.fixer.io/api/latest";
-
             Validate(accessKey, ip2CountryUrl, countryInfoUrl, countryInfoUrlAll, currencyInfoUrl);
+
+            currencyInfoUrl += accessKey;
+
         }
 
         static void Validate(params string[] keys)
@@ -27,11 +29,11 @@ namespace net_api.Infraestructure.ExternalAPI
             }
         }
 
-        private static readonly string accessKey = "?access_key=a16086f9c469390399a857f9b76991f5&format=1";
+        private static readonly string accessKey;
 
-        public static readonly string ip2CountryUrl = "https://api.ip2country.info/ip?{0}";
-        public static readonly string countryInfoUrl = "https://restcountries.eu/rest/v2/alpha/{0}";
-        public static readonly string countryInfoUrlAll = "https://restcountries.eu/rest/v2/all";
-        public static readonly string currencyInfoUrl = "http://data.fixer.io/api/latest" + accessKey;
+        public static readonly string ip2CountryUrl;
+        public static readonly string countryInfoUrl;
+        public static readonly string countryInfoUrlAll;
+        public static readonly string currencyInfoUrl;
     }
 }

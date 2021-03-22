@@ -14,7 +14,14 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "REDIS_INFO_SERVER": "localhost:6379",
+        "REDIS_STATS_SERVER": "localhost:6380",
+        "ACCESS_KEY": "?access_key=a16086f9c469390399a857f9b76991f5&format=1",
+        "URL_IP2_COUNTRY": "https://api.ip2country.info/ip?{0}",
+        "URL_COUNTRY_INFO": "https://restcountries.eu/rest/v2/alpha/{0}",
+        "URL_COUNTRY_INFO_ALL": "https://restcountries.eu/rest/v2/all",
+        "URL_CURRENCY_INFO": "https://data.fixer.io/api/latest"
       }
     },
     "net_api": {
@@ -26,7 +33,12 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "REDIS_INFO_SERVER": "localhost:6379",
-        "REDIS_STATS_SERVER": "localhost:6380"
+        "REDIS_STATS_SERVER": "localhost:6380",
+        "ACCESS_KEY": "?access_key=a16086f9c469390399a857f9b76991f5&format=1",
+        "URL_IP2_COUNTRY": "https://api.ip2country.info/ip?{0}",
+        "URL_COUNTRY_INFO": "https://restcountries.eu/rest/v2/alpha/{0}",
+        "URL_COUNTRY_INFO_ALL": "https://restcountries.eu/rest/v2/all",
+        "URL_CURRENCY_INFO": "https://data.fixer.io/api/latest"
       }
     }
   }
