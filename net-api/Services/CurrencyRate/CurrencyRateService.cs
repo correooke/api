@@ -35,6 +35,8 @@ namespace net_api.Services
 
         private Dictionary<string, double> CreateRatesDictionary(DataRates.Root apiRates)
         {
+            Validate(apiRates);
+
             var props = apiRates.rates.GetType().GetProperties();
             var rates = new Dictionary<string, double>();
 
@@ -46,6 +48,11 @@ namespace net_api.Services
             }
 
             return rates;
+        }
+
+        private void Validate(DataRates.Root apiRates)
+        {
+            throw new Exception(@"Error getting currency rates: " + apiRates.ToString());
         }
     }
 }

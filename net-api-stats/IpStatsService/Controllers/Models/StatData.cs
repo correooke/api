@@ -15,7 +15,7 @@ namespace IpStatsService.Controllers.Models
         {
             get
             {
-                return ByCountry.Where(c => c.Calls > 0).Max(c => c.Distance);
+                return ByCountry.Count() != 0 ? ByCountry.Where(c => c.Calls > 0).Max(c => c.Distance) : 0;
             }
         }
 
@@ -23,7 +23,7 @@ namespace IpStatsService.Controllers.Models
         {
             get
             {
-                return ByCountry.Where(c => c.Calls > 0).Min(c => c.Distance);
+                return ByCountry.Count() != 0 ? ByCountry.Where(c => c.Calls > 0).Min(c => c.Distance) : 0;
             }
         }
 
@@ -31,7 +31,7 @@ namespace IpStatsService.Controllers.Models
         {
             get
             {
-                return (int) ByCountry.Where(c => c.Calls > 0).Sum(c => c.Distance * c.Calls) / TotalCalls;
+                return ByCountry.Count() != 0 ? (int) ByCountry.Where(c => c.Calls > 0).Sum(c => c.Distance * c.Calls) / TotalCalls : 0;
             }
         }
 
@@ -39,7 +39,7 @@ namespace IpStatsService.Controllers.Models
         {
             get
             {
-                return ByCountry.Sum(c => c.Calls);
+                return ByCountry.Count() != 0 ? ByCountry.Sum(c => c.Calls) : 0;
             }
         }
     }

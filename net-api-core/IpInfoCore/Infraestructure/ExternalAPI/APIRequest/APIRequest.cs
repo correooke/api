@@ -24,8 +24,15 @@ namespace net_api.Infraestructure.ExternalAPI
         public async Task<T> GetFromCloudAsync<T>(params string[] urlParams)
         {
             var uri = String.Format(BaseUrl, urlParams);
-
-            var response = await HttpClient.GetAsync(uri);
+            HttpResponseMessage response;
+            try
+            {
+                response = await HttpClient.GetAsync(uri);
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Probably invalid URL ({uri})", e);
+            }
 
             CheckResponseStatus(response);
 

@@ -3,8 +3,11 @@
 
 #### Ejecución del proyecto:
 
+`gh repo clone correooke/api`
+`cd api`
 `docker-compose up -d `
-
+`chrome http://localhost:3001/swagger/index.html`
+`chrome http://localhost:9000/swagger/index.html`
 
 #### Acceso mediante swagger:
 
