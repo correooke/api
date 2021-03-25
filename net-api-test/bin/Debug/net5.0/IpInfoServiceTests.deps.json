@@ -1388,6 +1388,7 @@
       },
       "IpInfoCore/1.0.0": {
         "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
           "StackExchange.Redis": "2.2.4"
         },
         "runtime": {

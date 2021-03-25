@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "N8qlgDeSYgcg/8BYlgXY8HCl079FlFKhQdzAKqnnwAONxkUnunvBANu6t7AzF/KiK12SXzFeLJCQLNfxyAS4iA==",
+  "dgSpecHash": "n1GndLhUsybXW0uginGC51HK48irTeSQ1N88qKvM+ZcMYUl+cjJ7uK6CtIMNOCyY2D89iPu6xOkvDT/jqHGX5g==",
   "success": true,
   "projectFilePath": "C:\\tarea\\api\\net-api\\IpInfoService.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\eocariz\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\5.0.1\\microsoft.aspnetcore.authentication.openidconnect.5.0.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\eocariz\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\eocariz\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\eocariz\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.7.1\\microsoft.identitymodel.jsonwebtokens.6.7.1.nupkg.sha512",
     "C:\\Users\\eocariz\\.nuget\\packages\\microsoft.identitymodel.logging\\6.7.1\\microsoft.identitymodel.logging.6.7.1.nupkg.sha512",
     "C:\\Users\\eocariz\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.7.1\\microsoft.identitymodel.protocols.6.7.1.nupkg.sha512",

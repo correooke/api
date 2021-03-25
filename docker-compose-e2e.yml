@@ -74,6 +74,16 @@ services:
         build: ./balancer/
         ports:
         - "9000:80"  
+    cypress:
+        image: "cypress/included:3.2.0"
+        depends_on:
+        - apiInfo
+        environment:
+        - CYPRESS_baseUrl=http://apiInfo
+        working_dir: /net-api-e2e
+        volumes:
+        - ./net-api-e2e/cypress:/net-api-e2e/cypress  
+        - ./net-api-e2e/cypress.json:/net-api-e2e/cypress.json
 volumes:
     net-api-e2e:
     api-stats-files:

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace net_api.Infraestructure.ExternalAPI
         }
 
         internal string BaseUrl { get; init; }
+        internal ILogger Logger { get; init; }
 
         private static readonly HttpClient HttpClient;
 
@@ -27,6 +29,7 @@ namespace net_api.Infraestructure.ExternalAPI
             HttpResponseMessage response;
             try
             {
+                Logger.LogInformation($"Http request {uri}");
                 response = await HttpClient.GetAsync(uri);
             }
             catch (Exception e)

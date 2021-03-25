@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "mS5XY6koJoXfPhnncpdrkGouqIANsGt9FvPjj9YG0tOjLpmqw3YSI6wP10OBkzgK3Fg00CAn3YC/Q9Cg+meCQA==",
+  "dgSpecHash": "lURnHjrXr3f25HgYKSUZbCwClrLg8rXV6ZcWrR67HOOjLnl+z+dnchCRzISD/Iv1uhOdIaa29HP3vT2V8Q7emA==",
   "success": true,
   "projectFilePath": "C:\\tarea\\api\\net-api-core\\IpInfoCore\\IpInfoCore.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\eocariz\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\eocariz\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\eocariz\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\eocariz\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",

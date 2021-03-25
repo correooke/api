@@ -39,7 +39,7 @@ namespace IpStatsService.Controllers
         [HttpGet]
         public async Task<StatData> Get()
         {
-            return await _cache.GetAsync("", (key) => GetUpdatedStat(), TimeSpan.FromSeconds(10));
+            return await _cache.GetAsync("", (key) => GetUpdatedStat(), TimeSpan.FromSeconds(2));
         }
 
 

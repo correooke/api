@@ -9,4 +9,3 @@ C:\tarea\api\net-api-core\IpInfoCore\bin\Debug\net5.0\IpInfoCore.pdb
 C:\tarea\api\net-api-core\IpInfoCore\obj\Debug\net5.0\IpInfoCore.dll
 C:\tarea\api\net-api-core\IpInfoCore\obj\Debug\net5.0\ref\IpInfoCore.dll
 C:\tarea\api\net-api-core\IpInfoCore\obj\Debug\net5.0\IpInfoCore.pdb
-C:\tarea\api\net-api-core\IpInfoCore\obj\Debug\net5.0\IpInfoCore.csprojAssemblyReference.cache
