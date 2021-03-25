@@ -17,3 +17,4 @@
 **/values.dev.yaml
 **/TestResults
 **/*.dlls
+.vs/slnx.sqlite
